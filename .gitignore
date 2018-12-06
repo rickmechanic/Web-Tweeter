@@ -1,0 +1,6 @@
+
+run/src/.DS_Store
+run/src/models/.DS_Store
+*.db
+run/src/static/.DS_Store
+setup/requirements2.txt
