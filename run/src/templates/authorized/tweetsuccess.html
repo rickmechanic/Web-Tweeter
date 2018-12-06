@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://jumpcrew.com/wp-content/uploads/2017/06/twitter-square-logo.png">
+
+    <title>Web-Tweeter: Tweet Success!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet">
+  </head>
+  <style>.check_mark {
+      width: 80px;
+      height: 130px;
+      margin: 0 auto;
+    }
+    
+    button {
+      cursor: pointer;
+      margin-left: 15px;
+    }
+    
+    .hide{
+      display:none;
+    }
+    
+    .sa-icon {
+      width: 80px;
+      height: 80px;
+      border: 4px solid gray;
+      -webkit-border-radius: 40px;
+      border-radius: 40px;
+      border-radius: 50%;
+      margin: 20px auto;
+      padding: 0;
+      position: relative;
+      box-sizing: content-box;
+    }
+    
+    .sa-icon.sa-success {
+      border-color: #4CAF50;
+    }
+    
+    .sa-icon.sa-success::before, .sa-icon.sa-success::after {
+      content: '';
+      -webkit-border-radius: 40px;
+      border-radius: 40px;
+      border-radius: 50%;
+      position: absolute;
+      width: 60px;
+      height: 120px;
+      background: white;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    
+    .sa-icon.sa-success::before {
+      -webkit-border-radius: 120px 0 0 120px;
+      border-radius: 120px 0 0 120px;
+      top: -7px;
+      left: -33px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 60px 60px;
+      transform-origin: 60px 60px;
+    }
+    
+    .sa-icon.sa-success::after {
+      -webkit-border-radius: 0 120px 120px 0;
+      border-radius: 0 120px 120px 0;
+      top: -11px;
+      left: 30px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 0px 60px;
+      transform-origin: 0px 60px;
+    }
+    
+    .sa-icon.sa-success .sa-placeholder {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(76, 175, 80, .5);
+      -webkit-border-radius: 40px;
+      border-radius: 40px;
+      border-radius: 50%;
+      box-sizing: content-box;
+      position: absolute;
+      left: -4px;
+      top: -4px;
+      z-index: 2;
+    }
+    
+    .sa-icon.sa-success .sa-fix {
+      width: 5px;
+      height: 90px;
+      background-color: white;
+      position: absolute;
+      left: 28px;
+      top: 8px;
+      z-index: 1;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    
+    .sa-icon.sa-success.animate::after {
+      -webkit-animation: rotatePlaceholder 4.25s ease-in;
+      animation: rotatePlaceholder 4.25s ease-in;
+    }
+    
+    .sa-icon.sa-success {
+      border-color: transparent\9;
+    }
+    .sa-icon.sa-success .sa-line.sa-tip {
+      -ms-transform: rotate(45deg) \9;
+    }
+    .sa-icon.sa-success .sa-line.sa-long {
+      -ms-transform: rotate(-45deg) \9;
+    }
+    
+    .animateSuccessTip {
+      -webkit-animation: animateSuccessTip 0.75s;
+      animation: animateSuccessTip 0.75s;
+    }
+    
+    .animateSuccessLong {
+      -webkit-animation: animateSuccessLong 0.75s;
+      animation: animateSuccessLong 0.75s;
+    }
+    
+    @-webkit-keyframes animateSuccessLong {
+      0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+      }
+      65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+      }
+      84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+      }
+      100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+      }
+    }
+    @-webkit-keyframes animateSuccessTip {
+      0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+      }
+      54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+      }
+      70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+      }
+      84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+      }
+      100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+      }
+    }
+    @keyframes animateSuccessTip {
+      0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+      }
+      54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+      }
+      70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+      }
+      84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+      }
+      100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+      }
+    }
+    
+    @keyframes animateSuccessLong {
+      0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+      }
+      65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+      }
+      84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+      }
+      100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+      }
+    }
+    
+    .sa-icon.sa-success .sa-line {
+      height: 5px;
+      background-color: #4CAF50;
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 2;
+    }
+    
+    .sa-icon.sa-success .sa-line.sa-tip {
+      width: 25px;
+      left: 14px;
+      top: 46px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    
+    .sa-icon.sa-success .sa-line.sa-long {
+      width: 47px;
+      right: 8px;
+      top: 38px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    
+    @-webkit-keyframes rotatePlaceholder {
+      0% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      5% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      12% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+      }
+      100% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+      }
+    }
+    @keyframes rotatePlaceholder {
+      0% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      5% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      12% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+      }
+      100% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+      }
+    }</style>
+
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/timeline">Web-Tweeter</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/logout">Log out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                  <a class="nav-link" href="/timeline">
+                    <span data-feather="rss"></span>
+                    Timeline <span class="sr-only"></span>
+                  </a>
+                </li>
+                <br>
+              <li class="nav-item">
+                <a class="nav-link active" href="/posttweet">
+                  <span data-feather="hash"></span>
+                  Post Tweet <span class="sr-only"></span>
+                </a>
+              <br>
+              <li class="nav-item">
+                <a class="nav-link" href="/seetweets">
+                  <span data-feather="twitter"></span>
+                  Your Tweets <span class="sr-only"></span>
+                </a>
+              <br>
+              <li class="nav-item">
+                <a class="nav-link" href="/addfriends">
+                  <span data-feather="at-sign"></span>
+                  Follow Users <span class="sr-only"></span>
+                </a>                
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Tweet Successful!</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          {% if not message %}
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th class="text-center">Tweet</th>
+                  <th class="text-center">Image</th>
+                  <th class="text-center">Time</th>
+                </tr>
+              </thead>
+                <tr>
+                  <td class="text-center">{{ tweet["content"] }}</td>
+                  <td class="text-center">
+                    <img src="{{ tweet['pathname'] }}" width=60px>
+                  </td>
+                  <td class="text-center">{{ tweet["time"] }}</td>
+                </tr>
+            </table>
+          </div>
+          {% endif %}
+          {% if message %}
+            <h2 class="text-center" style="color:green">{{ message }}</h2>
+          {% endif %}
+          <br>
+          <br>
+          <div class="check_mark">
+            <div class="sa-icon sa-success animate">
+              <span class="sa-line sa-tip animateSuccessTip"></span>
+              <span class="sa-line sa-long animateSuccessLong"></span>
+              <div class="sa-placeholder"></div>
+              <div class="sa-fix"></div>
+            </div>
+          </div>
+          <br>
+          <br>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="http://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="http://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+    <script>
+        $('#modal').modal(options)
+    </script>
+    <script src="https://static.codepen.io/assets/common/everypage-516b5b2142c6e32e3bc86b9d3453fb4d4e0d474cafa2d97e6309ec234eb0780b.js"></script>
+    <script src="https://static.codepen.io/assets/packs/common-vendors-6cece0cccc49cdfb388e.js"></script>
+    <script src="https://static.codepen.io/assets/packs/everypage-e10c8936050a9f36d254.js"></script>
+    <script src="https://static.codepen.io/assets/details/pen_details-b54af43c3d54cdb3e5b07e09714e05bac06ed0fcaa04fe9331788f256f16115a.js"></script>
+    <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $("button").click(function () {
+        $(".sa-success").addClass("hide");
+        setTimeout(function () {
+          $(".sa-success").removeClass("hide");
+        }, 10);
+      });
+    </script>
+    </body>
+</html>
